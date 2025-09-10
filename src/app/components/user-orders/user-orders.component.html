@@ -1,0 +1,48 @@
+<div class="user-orders-container">
+  <h2>User Orders Management</h2>
+  
+  <!-- Loading indicator -->
+  <div *ngIf="userLoading$ | async" class="loading">
+    Loading users...
+  </div>
+  
+  <!-- Error handling -->
+  <div *ngIf="userError$ | async as error" class="error">
+    Error: {{ error }}
+  </div>
+  
+  <!-- User selection -->
+  <div class="user-selection">
+    <h3>Select a User:</h3>
+    <div class="user-buttons">
+      <button 
+        *ngFor="let user of users$ | async" 
+        (click)="selectUser(user.id)"
+        [class.selected]="(selectedUserId$ | async) === user.id"
+        class="user-button">
+        {{ user.name }}
+      </button>
+      <button 
+        (click)="clearSelection()"
+        [class.selected]="(selectedUserId$ | async) === null"
+        class="user-button clear-button">
+        Clear Selection
+      </button>
+    </div>
+  </div>
+  
+  <!-- Selected user info -->
+  <div *ngIf="userWithOrdersSummary$ | async as userSummary" class="user-info">
+    <app-user-name [name]="userSummary.name"></app-user-name>
+    <app-user-orders-amount 
+      [totalAmount]="userSummary.totalAmount"
+      [orderCount]="userSummary.orderCount">
+    </app-user-orders-amount>
+  </div>
+  
+  <!-- No user selected message -->
+  <div *ngIf="(selectedUserId$ | async) === null && !(userLoading$ | async)" class="no-selection">
+    Please select a user to view their orders summary.
+  </div>
+</div>
+

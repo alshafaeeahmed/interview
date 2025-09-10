@@ -1,0 +1,92 @@
+.user-orders-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c62828;
+}
+
+.user-selection {
+  margin-bottom: 30px;
+}
+
+.user-selection h3 {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.user-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user-button {
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.user-button:hover {
+  background-color: #f5f5f5;
+  border-color: #999;
+}
+
+.user-button.selected {
+  background-color: #2196f3;
+  color: white;
+  border-color: #2196f3;
+}
+
+.clear-button {
+  background-color: #f44336;
+  color: white;
+  border-color: #f44336;
+}
+
+.clear-button:hover {
+  background-color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.user-info {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+}
+
+.no-selection {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
